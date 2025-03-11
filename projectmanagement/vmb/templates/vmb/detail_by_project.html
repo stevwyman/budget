@@ -1,0 +1,35 @@
+{% extends "vmb/master.html" %}
+
+{% block head-section %}
+    {{ project.name }}
+{% endblock %}
+
+{% block head-section-sub %}
+    
+{% endblock %}
+
+{% block content %}
+{% if hours_by_month %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Hours [h]</th>
+            </tr>
+        </thead>
+        {% for line in hours_by_month %}
+        <tr>
+            <td><a href="{% url 'detail_by_project_month' project.oracle_id line.month|date:'dMY'  %}">{{ line.month|date:"M Y" }}</a></td>
+            <td>{{ line.sum }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td><strong>{{ hours_sum.sum }}</strong></td>
+        </tr>
+    </table>
+{% else %}
+    <p>No result available.</p>
+{% endif %}
+
+{% endblock %}

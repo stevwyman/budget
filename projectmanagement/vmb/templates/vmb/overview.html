@@ -1,0 +1,17 @@
+{% extends "vmb/master.html" %}
+
+{% block content %}
+{% if hours_by_project %}
+    <table>
+        {% for line in hours_by_project %}
+        <tr>
+            <td><a href="{% url 'detail_by_project' line.project_id  %}">{{ line.project_id }}</a></td>
+            <td>{{ line.hours_sum }} h</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No result available.</p>
+{% endif %}
+
+{% endblock %}

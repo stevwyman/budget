@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load django_bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary text-info">
+  <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/vmb/overview">Overview</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/vmb/read">import</a>
+              </li>
+              
+          </ul>
+      </div>
+  </div>
+</nav>
+
+{% bootstrap_messages %}
+
+<main>
+  <section class="py-5 text-center container">
+      <h1>
+          {% block head-section %}{% endblock %}
+      </h1>
+      <p class="lead-text muted">
+          {% block head-section-sub %}{% endblock %}
+      </p>
+  </section>
+
+  <div class="container">
+    <div class="row py-1">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div>
+
+</main>
+
+</body>
+</html>
