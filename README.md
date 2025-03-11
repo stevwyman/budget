@@ -14,6 +14,7 @@ Then a consolidated view can be generated, that shows all expenditures that occu
 
 ## backlog
 
+- [ ] add a timestamp for the latest successful import
 - [ ] create a burndown, based on the project runtime, the occured cost and the budget
 
 ## set up the development environment
