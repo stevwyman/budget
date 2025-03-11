@@ -1,6 +1,9 @@
 
 # budget
 
+![Python](https://img.shields.io/badge/Python-3.13-green.svg)
+![Django](https://img.shields.io/badge/Django-5.1.7-green.svg)
+
 a tool to track the budget in my projects
 
 In a first step every project is defined with a budget.
@@ -41,4 +44,3 @@ python3 -m venv budget-env
 source ../../../virtualenv/budget-env/bin/activate
 pip3 install -r ../requirements.txt
 ````
-
